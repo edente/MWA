@@ -1,17 +1,21 @@
 <h1>This is the main page {{mainCtrl.name}}</h1>
 
 
-<p>{{mainCtrl.animals}}</p>
-<ul>
-    <li ng-repeat="animal in mainCtrl.animals">
-         {{animal.entries}}
-        {{animal.entries.API}}
-        {{animal.entries.Description}}
-        {{animal.entries.Auth}}
-        {{animal.entries.HTTPS}}
-        {{animal.entries.Cors}}
-        {{animal.entries.Link}}
-        {{animal.entries.Category}}<br/>
+<!--<p>{{mainCtrl.animals}}</p>-->
+ 
+<ul style="list-style:none">
+    <li ng-repeat="animal in mainCtrl.animals.entries">
+         <!-- {{mainCtrl.animals.entries}} -->
+<p>{</p>
+     <p>"API":   {{animal.API}}</p>
+        <p>  "Description":{{animal.Description}}</p>
+            <p> "Auth":{{animal.Auth}}</p>
+                <p>"HTTPS":{{animal.HTTPS}}</p>
+                    <p>"Cors":{{animal.Cors}}</p>
+                        <p>"Link":{{animal.Link}}</p>
+                            <p>"Category":{{animal.Category}}</p> 
+                            <p>},</p>
 
     </li>
 </ul> 
+
