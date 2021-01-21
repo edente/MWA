@@ -1,0 +1,60 @@
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid  #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  /* tr:nth-child() {
+    background-color: #dddddd;
+  } */
+  </style>
+  </head>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name of the Car</th>
+      <th scope="col">Details</th>
+      <th scope="col">Delete Car</th>
+      <th scope="col">Edit Car</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat =" car in vm.cars">
+      <td><a href="#!/car/{{car._id}}">{{car.model}}</td>
+      <td><a href="#!/car/{{car._id}}">Details</a></td>
+      <td><a href="#!/deleteCar/{{car._id}}">Delete</a></td>
+      <td><a href="#!/updateCar/{{car._id}}">Update</a></td>
+    </tr>
+  
+  </tbody>
+</table>
+<!-- <button type="button" formaction="Car-add.html">Add a new Car!</button> -->
+ <button onclick=a href="#!/updateCar/{{car._id}}""></button>
+
+
+
+
+
+
+
+ 
+
+<form name="vm.carForm" ng-submit="vm.addCar()">
+  To add a new Car please fill in all the field below : <br/>
+  year <input type="number" name="year" required ng-model = "vm.newCarYear" style="color: black;"> <br/>
+  make: <input type="text" name="make" required ng-model = "vm.newCarMake" style="color: black;"> <br/>
+  model : <input type="text" name="model" required ng-model = "vm.newCarModel" style="color: black;"> <br/>
+  MadeIn : <input type="text" name="MadeIn" required ng-model = "vm.newCarMadeIn" style="color: black;"> <br/>
+  transmission: <input type="text" name="transmission" required ng-model = "vm.newCartransmission" style="color: black;"></br>
+                    
+  <button type="submit" class="btn-success">Add Car</button> <br/>
+
+</form>

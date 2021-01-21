@@ -1,0 +1,46 @@
+<h1>Information About Game: <p>{{vm.title}}
+<game-rating stars={{vm.rating}}></game-rating>
+
+</p></h1>
+
+
+ <p>
+    Price: {{vm.game.price | currency }}<br/>
+    Minimum Players: {{vm.game.minPlayers}}<br/>
+    Maximum Players: {{vm.game.maxPlayers}} <br/>
+    Minimum Age : {{vm.game.minAge}} <br/>
+    Publisher  : {{vm.game.publisher.name}}
+</p>
+</div>
+
+<!-- <div ng-show="vm.isCheckedToUpdate">
+
+    <form name="vm.gameForm" ng-submit="vm.updateGame()">
+        To update the game please fill in all the field below : <br/>
+        Title: <input type="text" name="title" required ng-model = "vm.updatedTitle" style="color: black;"> <br/>
+        Price: <input type="text" name="price" required ng-model = "vm.updatedPrice" value= "{{vm.game.price}}" style="color: black;"> <br/>
+        Year : <input type="text" name="year" required ng-model = "vm.updatedYear" style="color: black;"> <br/>
+        Rating : <input type="text" name="rating" required ng-model = "vm.updatedRate" style="color: black;"> <br/>
+        Minimum Players: <input type="number" name="minPlayers" required ng-model = "vm.updatedMinPlayers" style="color: black;"
+                          ng-min =1 ng-max=10>
+                          <span ng-show="vm.gameForm.minPlayers.$dirty && vm.gameForm.minPlayers.$invalid">
+                            The Minimum Player is between 1 and 10.
+                          </span>
+                         
+                          <br/>
+        Maximum Players: <input type="number" name="maxPlayers" required ng-model = "vm.updatedMaxPlayers" style="color: black;"
+                         ng-min =1 ng-max=10>
+                        <span ng-show="vm.gameForm.maxPlayers.$dirty && vm.gameForm.maxPlayers.$invalid">
+                          The Maximum Player is between 1 and 10.
+                        </span>
+                           
+                          <br/> 
+        Minimum Player Age: <input type="text" name="minAge" required ng-model = "vm.updatedMinAge" style="color: black;"> <br/>
+        Designer: <input type="text" name="designer" required ng-model = "vm.updatedDesigner" style="color: black;"> <br/>
+      
+        <button type="submit" class="btn-success">Update Game</button> <br/>
+      
+      </form>
+
+</div> -->
+
