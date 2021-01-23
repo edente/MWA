@@ -1,0 +1,48 @@
+<h1>Information About Job: <p>{{vm.title}}
+ 
+</p></h1>
+
+
+ <p>
+  title: {{vm.Job.title}}<br/>
+  salary: {{vm.Job.salary | currency }}<br/>
+  description: {{vm.Job.description}} <br/>
+  experience : {{vm.Job.experience}} <br/>
+  skills  : {{vm.Job.skills}}</br>
+  postDate :{{vm.Job.postDate | date:"short"}}
+</p>
+</div>
+
+ 
+
+<!-- <div ng-show="vm.isCheckedToUpdate">
+
+    <form name="vm.JobForm" ng-submit="vm.updateJob()">
+        To update the Job please fill in all the field below : <br/>
+        Title: <input type="text" name="title" required ng-model = "vm.updatedTitle" style="color: black;"> <br/>
+        Price: <input type="text" name="price" required ng-model = "vm.updatedPrice" value= "{{vm.Job.price}}" style="color: black;"> <br/>
+        Year : <input type="text" name="year" required ng-model = "vm.updatedYear" style="color: black;"> <br/>
+        Rating : <input type="text" name="rating" required ng-model = "vm.updatedRate" style="color: black;"> <br/>
+        Minimum Players: <input type="number" name="minPlayers" required ng-model = "vm.updatedMinPlayers" style="color: black;"
+                          ng-min =1 ng-max=10>
+                          <span ng-show="vm.JobForm.minPlayers.$dirty && vm.JobForm.minPlayers.$invalid">
+                            The Minimum Player is between 1 and 10.
+                          </span>
+                         
+                          <br/>
+        Maximum Players: <input type="number" name="maxPlayers" required ng-model = "vm.updatedMaxPlayers" style="color: black;"
+                         ng-min =1 ng-max=10>
+                        <span ng-show="vm.JobForm.maxPlayers.$dirty && vm.JobForm.maxPlayers.$invalid">
+                          The Maximum Player is between 1 and 10.
+                        </span>
+                           
+                          <br/> 
+        Minimum Player Age: <input type="text" name="minAge" required ng-model = "vm.updatedMinAge" style="color: black;"> <br/>
+        Designer: <input type="text" name="designer" required ng-model = "vm.updatedDesigner" style="color: black;"> <br/>
+      
+        <button type="submit" class="btn-success">Update Job</button> <br/>
+      
+      </form>
+
+</div> -->
+

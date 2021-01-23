@@ -1,0 +1,78 @@
+<h3>{{vm.title}} </h3>
+
+<style>
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid  #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child() {
+    background-color: #dddddd;
+  }
+  </style>
+  </head>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name of the Job</th>
+      <th scope="col">Details</th>
+      <th scope="col">Delete Job</th>
+      <th scope="col">Update Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat =" Job in vm.Jobs">
+      <td>{{Job.title}}</td>
+      <td><a href="#!/Job/{{Job._id}}">Details</a></td>
+      <td><a href="#!/deleteJob/{{Job._id}}">Delete</a></td>
+      <td><a href="#!/updateJob/{{Job._id}}">Update</a></td>
+    </tr>
+  
+  </tbody>
+</table>
+<!-- <button type="button" formaction="Job-add.html">Add a new Job!</button> -->
+<!-- <input type="button" onclick="location.href='Job-add.html';" value="Contact" /> -->
+
+
+
+<!-- <input type="button" value="Add a new Job" formaction="Job-add.html"></button> -->
+<!-- <u1>
+    <li ng-repeat =" Job in vm.Jobs">
+      <a href="#!/Job/{{Job._id}}">{{Job.title}}</a>    <a href="#!/Job/{{Job._id}}">Delete</a>
+    </li>
+</u1> -->
+
+<!-- <form name="vm.JobForm" ng-submit="vm.addJob()">
+  To add a new Job please fill in all the field below : <br/>
+  Title: <input type="text" name="title" required ng-model = "vm.newJobTitle" style="color: black;" size="10" maxlenght="3"> <br/>
+  Price: <input type="text" name="price" required ng-model = "vm.newJobPrice" style="color: black;"> <br/>
+  Year : <input type="text" name="year" required ng-model = "vm.newJobYear" style="color: black;"> <br/>
+  Rating : <input type="text" name="rating" required ng-model = "vm.newJobRate" style="color: black;"> <br/>
+  Minimum Players: <input type="number" name="minPlayers" required ng-model = "vm.newJobMinPlayers" style="color: black;"
+                    ng-min =1 ng-max=10>
+                    <span ng-show="vm.JobForm.minPlayers.$dirty && vm.JobForm.minPlayers.$invalid">
+                      The Minimum Player is between 1 and 10.
+                    </span>
+                   
+                    <br/>
+  Maximum Players: <input type="number" name="maxPlayers" required ng-model = "vm.newJobMaxPlayers" style="color: black;"
+                   ng-min =1 ng-max=10>
+                  <span ng-show="vm.JobForm.maxPlayers.$dirty && vm.JobForm.maxPlayers.$invalid">
+                    The Maximum Player is between 1 and 10.
+                  </span>
+                     
+                    <br/> 
+  Minimum Player Age: <input type="text" name="minAge" required ng-model = "vm.newJobMinAge" style="color: black;"> <br/>
+  Designer: <input type="text" name="designer" required ng-model = "vm.newJobDesigner" style="color: black;"> <br/>
+
+  <button type="submit" class="btn-success">Add Job</button> <br/>
+
+</form> -->
