@@ -1,0 +1,72 @@
+<h3>{{vm.title}} </h3>
+<div ng-if="vm.message" class="alert alert-success" role="alert">
+    <h4>{{vm.message}}</h4>
+</div>
+<div ng-if="vm.err" class="alert alert-danger" role="alert">
+    <h4>{{vm.err}}</h4>
+</div>
+
+<form name="vm.GameFormOfSearch" ng-submit="vm.searchGame()">
+  <div class="input-group">
+    <p><input type="search" class="form-control rounded" placeholder="Search" ng-model = "vm.searchGameName" aria-label="Search"
+      aria-describedby="search-addon" /><br/>
+    <button type="submit" class="btn btn-primary">search</button></p>
+  </div>
+  </form>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name of the Game</th>
+      <th scope="col">Details</th>
+      <th scope="col" ng-if="vm.isLoggedIn()">Delete Game</th>
+      
+    </tr>
+  </thead>
+  <tbody style="color: rgb(100, 86, 86);">
+    <tr ng-repeat =" game in vm.games">
+      <td><a href="#!/game/{{game._id}}" style="color: rgb(100, 86, 86);">{{game.title}}</a></td>
+      <td> <a href="#!/game/{{game._id}}" style="color: rgb(100, 86, 86);">Details</a></td>
+      <td ng-if="vm.isLoggedIn()"><button type="button" ng-click="vm.deleteGame(game._id,$index,game.title)" >Delete Game</button></td>
+    </tr>
+  
+  </tbody>
+</table>
+
+
+<!-- <u1>
+    <li ng-repeat =" game in vm.games">
+      <a href="#!/game/{{game._id}}">{{game.title}}</a>    <a href="#!/game/{{game._id}}">Delete</a>
+    </li>
+</u1> -->
+<div ng-if="vm.isLoggedIn()">
+<form name="vm.gameForm" ng-submit="vm.addGame()">
+
+  <p>To add a new game please fill in all the field below : </p>
+  <p>Title: <input type="text" name="title" required ng-model = "vm.newGameTitle" style="color: rgb(100, 86, 86);"> </p>
+  <p>Price: <input type="text" name="price" required ng-model = "vm.newGamePrice" style="color: black;"> </p>
+  <p>Year : <input type="text" name="year" required ng-model = "vm.newGameYear" style="color: black;"> </p>
+  <p>Rating : <input type="text" name="rating" required ng-model = "vm.newGameRate" style="color: black;"> </p>
+  <p>Minimum Players: <input type="number" name="minPlayers" required ng-model = "vm.newGameMinPlayers" style="color: black;"
+                    ng-min =1 ng-max=10>
+                    <span ng-show="vm.gameForm.minPlayers.$dirty && vm.gameForm.minPlayers.$invalid">
+                      The Minimum Player is between 1 and 10.
+                    </span>
+                  </p>
+                   
+                    
+  <p>Maximum Players: <input type="number" name="maxPlayers" required ng-model = "vm.newGameMaxPlayers" style="color: black;"
+                   ng-min =1 ng-max=10>
+                  <span ng-show="vm.gameForm.maxPlayers.$dirty && vm.gameForm.maxPlayers.$invalid">
+                    The Maximum Player is between 1 and 10.
+                  </span>
+                     </p>
+
+  <p>Minimum Player Age: <input type="text" name="minAge" required ng-model = "vm.newGameMinAge" style="color: black;"> </p>
+  <p>Designer: <input type="text" name="designer" required ng-model = "vm.newGameDesigner" style="color: black;"> </p>
+
+  <p><button type="submit" class="btn-success">Add Game</button> </p>
+
+
+</form>
+</div>
