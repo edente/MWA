@@ -5,7 +5,9 @@ function CarDataFactory($http){
         getAllCars:getAllCars,
         getOneCar:getOneCar,
         addOneCar:addOneCar,
-        deleteOneCar:deleteOneCar
+        deleteOneCar:deleteOneCar,
+        searchAllCar:searchAllCar
+
 
     };
 
@@ -21,6 +23,10 @@ function CarDataFactory($http){
     function deleteOneCar(id){
         return $http.delete("/api/cars/"+id).then(complete).catch(failed);
     }
+    function searchAllCar(searchData){
+        return $http.get("/api/carSearch?searchName="+searchData).then(complete).catch(failed);
+    }
+
 
     function complete(response){
 

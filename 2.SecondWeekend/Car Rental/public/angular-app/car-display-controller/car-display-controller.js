@@ -7,7 +7,7 @@ function _getStarRating(rate){
 
 function CarController($routeParams,CarDataFactory){
     var vm =this;
-    vm.title1 = "Car rentalsss";
+    vm.title1 = "Car Rental";
     var id= $routeParams.id;
     console.log("car id " + id);
     CarDataFactory.getOneCar(id).then(function(response){

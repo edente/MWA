@@ -1,3 +1,5 @@
+
+
 <style>
   table {
     font-family: arial, sans-serif;
@@ -16,23 +18,36 @@
   } */
   </style>
   </head>
+  <div ng-if="vm.message" class="alert alert-success" role="alert">
+    <h4>{{vm.message}}</h4>
+  </div>
+  <div ng-if="vm.err" class="alert alert-danger" role="alert">
+    <h4>{{vm.err}}</h4>
+  </div>
+  <form name="vm.carFormOfSearch" ng-submit="vm.searchcar()">
+    <div class="input-group">
+      <p><input type="search" class="form-control rounded" placeholder="Search" ng-model = "vm.searchcarName" aria-label="Search"
+        aria-describedby="search-addon" /><br/>
+      <button type="submit" class="btn btn-primary">search</button></p>
+    </div>
+    </form>
+  
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Name of the Car</th>
       <th scope="col">Details</th>
-      <th scope="col">Delete Car</th>
-      <th scope="col">Edit Car</th>
-    </tr>
+      <th scope="col" ng-if="vm.isLoggedIn()">Delete Car</th>
+     </tr>
   </thead>
   <tbody>
     <tr ng-repeat =" car in vm.cars">
       <td><a href="#!/car/{{car._id}}">{{car.model}}</td>
       <td><a href="#!/car/{{car._id}}">Details</a></td>
-      <td><a href="#!/deleteCar/{{car._id}}">Delete</a></td>
-      <td><a href="#!/updateCar/{{car._id}}">Update</a></td>
-    </tr>
+       <td ng-if="vm.isLoggedIn()"><button type="button" ng-click="vm.deletecar(car._id,$index,car.title)" >Delete car</button></td>
+
+     </tr>
   
   </tbody>
 </table>
@@ -45,7 +60,8 @@
 
 
 
- 
+ <div ng-if="vm.isLoggedIn()">
+
 
 <form name="vm.carForm" ng-submit="vm.addCar()">
   To add a new Car please fill in all the field below : <br/>
@@ -56,5 +72,6 @@
   transmission: <input type="text" name="transmission" required ng-model = "vm.newCartransmission" style="color: black;"></br>
                     
   <button type="submit" class="btn-success">Add Car</button> <br/>
-
 </form>
+
+</div>

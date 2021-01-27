@@ -7,23 +7,23 @@ function RegisterController($http){
 
         var user={
             username:vm.username,
-            password:vm.password,
-            name:vm.name
+            password:vm.password
+            //name:vm.name
         };
         if(!vm.username || !vm.password){
-            vm.message = "";
+           // vm.message = 
             vm.err = " Please add a username and password";
         }else{
             if(vm.password !== vm.passwordRepeat){
-                vm.message = "";
+             //   vm.message = 
                 vm.err=" Please make sure the passwords match. ";
             }else{
                 $http.post("/api/users/register",user).then(function(result){
-                vm.message="Successfull registeration, please login.";
-                vm.err="";
+                    console.log(result);
+                    vm.message = "Successful registration, please login.";
+                    vm.err = "";
                 }).catch(function(err){
                     console.log(err);
-
                 });
             }
         }
