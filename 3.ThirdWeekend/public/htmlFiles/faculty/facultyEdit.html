@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content=" Eden Zere">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/master.css}">
+    <title>Student And Faculty Attendance </title>
+</head>
+
+<body>
+    <header xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a style="padding-right: 2em;" class="navbar-brand" href="/students/list">Student : : : Student Attendance
+                </a>
+            <!--<span style="color: #ffffff;"> &nbsp; | &nbsp;</span>-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
+                        <a class="nav-link" href="/students/list">Students</a>
+                    </li>
+                    <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em;">
+                        <a class="nav-link" href="">Faculty</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <span style="color: #ffffff;">Welcome,&nbsp;</span>
+                    <a style="color: #ffffff; margin-right: 1em;" href="#">Guest</a>
+                    <a href="./new-form.html" class="btn btn-secondary" style="padding: 5px 5px; margin-left: 10px; margin-right:20px">Sign up</a>
+                    <a href="./login.html" class="btn btn-secondary" style="padding:5px 5px">Login</a>
+
+
+                </form>
+            </div>
+        </nav>
+    </header>
+<div class="container">
+    <form>
+        <h2>Enter Information</h2>
+        <input id="text" type="text" value="Please Enter NRIC " style="Width:50%"/> 
+         
+<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="Student" />
+        
+<div style="margin-top:1em;margin-bottom:1em;" class="container">
+    <div>
+        <span style="font-size: 2em; color: #32a5e7;">Students in our Collection</span>
+        <span style="float:right;">
+            <a class="btn btn-outline-success btn-lg" href="/eregistrar/student/new">Add a new student</a>
+        </span>
+    </div>
+    <!-- Search panel -->
+    <form id="searchStudentForm" method="get" action="/eregistrar/student/search">
+        <div style="margin-top:1em;" class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchString" name="searchString" placeholder="Enter a string to search for students" th:value="${searchString}" autofocus />
+                    <div class="input-group-append">
+                        <button id="btnSubmit" type="submit" class="btn btn-outline-success">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div style="font-size: 1em">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Student Id</th>
+                <th scope="col">First Name</th>
+                 <th scope="col">Last Name</th>
+                 <th><a href="public/student/edit.html">Edit</a></th>
+                 <th><a href="">Delete</a></th>
+
+            </tr>
+            </thead>
+            <tbody>
+                 
+ 
+
+<p>&nbsp;</p>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content=" Eden Zere">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/master.css}">
+    <title>Student And Faculty Attendance </title>
+    <style>
+    img {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 5px;
+        width: 250px;
+      }
+      </style>
+      
+      
+</head>
+
+<body>
+    <header xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a style="padding-right: 2em;" class="navbar-brand" href="/students/list">Student : : : Student Attendance
+                </a>
+            <!--<span style="color: #ffffff;"> &nbsp; | &nbsp;</span>-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em; padding-right: 2em;">
+                        <a class="nav-link" href="/students/list">Students</a>
+                    </li>
+                    <li class="nav-item" style="border-left: white 1px solid; padding-left: 2em;">
+                        <a class="nav-link" href="">Faculty</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <span style="color: #ffffff;">Welcome,&nbsp;</span>
+                    <a style="color: #ffffff; margin-right: 1em;" href="#">Guest</a>
+                    <a href="#" class="btn btn-secondary">Sign up</a>
+                    <a href="#" class="btn btn-secondary">Login</a>
+
+
+                </form>
+            </div>
+        </nav>
+    </header>
+<div class="column" style="padding-right:500px;">
+    <form>
+        <h2 style="color: black;" ><u>Scan The Code for Attendance</u></h2>
+        
+        
+        <div class= "row" style="padding-left: 100px; padding-top: 20px;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=300x100" alt="" title="Studnet" border-style="solid"/>
+        <img src="https://2build.files.wordpress.com/2015/03/online-qr-code-scanner.png" alt="Paris">
+
+</div>
+         
+ 
+         
+
+    
+ </div>
+</body>
+
+</html>
