@@ -11,7 +11,8 @@ var studentSchema = new mongoose.Schema({
         type:String
     },
     EmailAddress:{
-        type:String
+        type:String,
+        unique:true
     },
     password:{
         type:String,
@@ -25,4 +26,4 @@ var studentSchema = new mongoose.Schema({
     
 });
 
-mongoose.model("Student",studentSchema);
+mongoose.model("StudentAttendance",studentSchema,"StudentAttendance");

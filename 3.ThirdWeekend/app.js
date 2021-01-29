@@ -1,15 +1,10 @@
-
-//it should always be putted on the top because it is expensive to open 
-// the connection
-require("./api/data/db");
+ require("./api/data/db");
 
 var express = require("express");
 var path = require("path");
-var routes = require("./api/routes");
+var routes = require("./api/route");
 var bodyParser = require("body-parser");
-const { json } = require("body-parser");
 var app = express();
-
 app.set("port",3000);
 
 app.use(function(req,res,next){

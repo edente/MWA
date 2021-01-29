@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const dbURL = "mongodb://localhost:27017/meanGames";
+const dbURL = "mongodb://localhost:27017/Attendance";
 
 mongoose.connect(dbURL,{useNewUrlParser:true,useUnifiedTopology:true});
 
@@ -38,4 +38,7 @@ process.once("SIGUSR2",function(){
 });
 
 require("./student-model");
+// require("./attendance-model");
+// require("./faculty-model");
+// require("./qr_code-model")
  

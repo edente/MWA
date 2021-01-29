@@ -1,16 +1,16 @@
-var mongoose = require("mongoose");
+// var mongoose = require("mongoose");
 
-var FacultySchema = new mongoose.Schema({
+// var FacultySchema = new mongoose.Schema({
 
-    FirstName:{
-        type:String,
-        unique:true,
-        required:true
-    },
-    LastName:{
-        type:String
-    },
+//     FirstName:{
+//         type:String="Abel",
+//         unique:true,
+//         required:true
+//     },
+//     LastName:{
+//         type:String="solomun"
+//     },
     
-});
+// });
 
-mongoose.model("Faculty",FacultySchema);
+// mongoose.model("Faculty",FacultySchema);
