@@ -1,0 +1,831 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "CS583 FINAL PROJECT",
+      "description": "API DOCUMENTATION",
+      "license": {
+        "name": "GOOGLE",
+        "url": "https://google.com"
+      }
+    },
+    "host": "localhost:4000",
+    "basePath": "/api/",
+    "tags": [
+      {
+        "name": "Farmer",
+        "description": "API for farmers"
+      },
+      {
+        "name": "Customer",
+        "description": "API for customers"
+      },
+      {
+        "name": "Super",
+        "description": "API for super"
+      }
+    ],
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+        "/farmers/signup": {
+          "post": {
+            "tags": [
+              "Farmer"
+            ],
+            "description": "farmer create new account",
+            "parameters": [
+              {
+                "name": "farmer",
+                "in": "body",
+                "description": "create new farmer",
+                "schema": {
+                  "$ref": "#/definitions/farmer"
+                }
+              }
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "farmer is registered",
+                "schema": {
+                  "$ref": "#/definitions/farmer"
+                }
+              }
+            }
+          }
+        },
+        "/farmers/login": {
+          "post": {
+            "tags": [
+              "Farmer"
+            ],
+            "description": "farmer/super signin",
+            "parameters": [
+              {
+                "name": "farmer",
+                "in": "body",
+                "description": "login farmer",
+                "schema": {
+                  "$ref": "#/definitions/farmer"
+                }
+              }
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "login sucessfully ",
+                "schema": {
+                  "$ref": "#/definitions/farmer"
+                }
+              }
+            }
+          }
+        },
+        "/customers/signup": {
+          "post": {
+            "tags": [
+              "Customer"
+            ],
+            "description": "registered customer",
+            "parameters": [
+              {
+                "name": "customer",
+                "in": "body",
+                "description": "new customer account ",
+                "schema": {
+                  "$ref": "#/definitions/customer"
+                }
+              }
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "account is created",
+                "schema": {
+                  "$ref": "#/definitions/customer"
+                }
+              }
+            }
+          }
+        },
+        "/customers/login": {
+          "post": {
+            "tags": [
+              "Customer"
+            ],
+            "description": "login account",
+            "parameters": [
+              {
+                "name": "customer",
+                "in": "body",
+                "description": "login account ",
+                "schema": {
+                  "$ref": "#/definitions/customer"
+                }
+              }
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "successfully login ",
+                "schema": {
+                  "$ref": "#/definitions/customer"
+                }
+              }
+            }
+          }
+        },
+        "/farmers/{id}": {
+          "get": {
+            "tags": [
+              "Farmer"
+            ],
+            "description": "get all list products",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "get products ",
+                "schema": {
+                  "$ref": "#/definitions/farmer"
+                }
+              }
+            ],
+            "produces": [
+              "application/json"
+            ],
+            "responses": {
+              "200": {
+                "description": "list of products  ",
+                "schema": {
+                  "$ref": "#/definitions/farmer"
+                }
+              }
+            }
+          }
+        },
+        "/farmers/{id}": {
+            "post": {
+              "tags": [
+                "Farmer"
+              ],
+              "description": "add products",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "add products ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "added products  ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              }
+            }
+          },
+          "/farmers/:id/products/:productId": {
+            "patch": {
+              "tags": [
+                "Farmer"
+              ],
+              "description": "update products",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "update products",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                },
+                {
+                  "name": "productId",
+                  "in": "path",
+                  "description": "update products ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                },
+                {
+                  "name": "farmer",
+                  "in": "body",
+                  "description": "update products ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": " updated  products  ",
+                  "schema": {
+                    "$ref": "#/definitions/farmers"
+                  }
+                }
+              }
+            }
+          },
+          "/farmers/id/products/productId": {
+            "delete": {
+              "tags": [
+                "Farmer"
+              ],
+              "description": "delete products",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "delete products",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                },
+                {
+                  "name": "productId",
+                  "in": "path",
+                  "description": "delete products",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "dleeted products  ",
+                  "schema": {
+                    "$ref": "#/definitions/farmers"
+                  }
+                }
+              }
+            }
+          },
+          "/farmers/:id/orders/:orderId": {
+            "patch": {
+              "tags": [
+                "Farmer"
+              ],
+              "description": "change status",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "change status",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                },
+                {
+                  "name": "orderId",
+                  "in": "path",
+                  "description": "change status",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                },
+                {
+                  "name": "farmer",
+                  "in": "body",
+                  "description": "change status",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "status changed ",
+                  "schema": {
+                    "$ref": "#/definitions/farmers"
+                  }
+                }
+              }
+            }
+          },
+          "/lists": {
+            "get": {
+              "tags": [
+                "Customer"
+              ],
+              "description": "get farmers",
+              "parameters": [
+        
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "successfully login ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              }
+            }
+          },
+          "/lists/:id/customers/:customerId": {
+            "post": {
+              "tags": [
+                "Customer"
+              ],
+              "description": "place order",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "place order",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                },
+                {
+                  "name": "customerId",
+                  "in": "path",
+                  "description": "place order ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                },
+                {
+                  "name": "farmer",
+                  "in": "body",
+                  "description": "place order ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "order placed ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              }
+            }
+          },
+          "/customers/:id": {
+            "get": {
+              "tags": [
+                "Customer"
+              ],
+              "description": "get cart",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "get cart ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "get cart ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              }
+            }
+          },
+          "/customers/:id/carts": {
+            "post": {
+              "tags": [
+                "Customer"
+              ],
+              "description": "add cart",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "cart is added ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                },
+                {
+                  "name": "customer",
+                  "in": "body",
+                  "description": "cart is added ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "successfully added ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              }
+            }
+          },
+          "/customers/{id}": {
+            "post": {
+              "tags": [
+                "Customer"
+              ],
+              "description": "delete from cart",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "cart is deleted ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                },
+                {
+                  "name": "customer",
+                  "in": "body",
+                  "description": "cart is deleted ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "successfully deleted ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              }
+            }
+          },
+          "/customers/{id}/orders": {
+            "get": {
+              "tags": [
+                "Customer"
+              ],
+              "description": "order history",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "get order history ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "successfully fetched orders history",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              }
+            }
+          },
+          "/lists/{id}/reviews": {
+            "patch": {
+              "tags": [
+                "Customer"
+              ],
+              "description": "review farmer",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "farmer is reviewed ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                },
+                {
+                  "name": "customer",
+                  "in": "body",
+                  "description": "farmer is reviewed ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "successfully  reviewed ",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              }
+            }
+          },
+          "farmers/{id}/accounts": {
+            "patch": {
+              "tags": [
+                "Super"
+              ],
+              "description": "activate/deactivate farmers",
+              "parameters": [
+                {
+                  "name": "super",
+                  "in": "body",
+                  "description": "activate/deactivate farmers",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                },
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "activate/deactivate farmers",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "activate/deactivate farmers",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              }
+            }
+          },
+          "/farmers/logs/files": {
+            "get": {
+              "tags": [
+                "Super"
+              ],
+              "description": "get files",
+              "parameters": [
+
+              ],
+              "produces": [
+              ],
+              "responses": {
+                "200": {
+                  "description": "get files ",
+                  "schema": {
+                  }
+                }
+              }
+            }
+          },
+          "/customers": {
+            "get": {
+              "tags": [
+                "Super"
+              ],
+              "description": "get customers",
+              "parameters": [
+              
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "get customers",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              }
+            }
+          },
+          "/customers/{id}": {
+            "patch": {
+              "tags": [
+                "Super"
+              ],
+              "description": "reset customer password",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "reset customer password",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                },
+                {
+                  "name": "customer",
+                  "in": "body",
+                  "description": "reset customer password",
+                  "schema": {
+                    "$ref": "#/definitions/customer"
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "reset customer password ",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              }
+            }
+          },
+          "customers/{id}/accounts": {
+            "post": {
+              "tags": [
+                "Super"
+              ],
+              "description": "activate / dectivate customer",
+              "parameters": [
+                {
+                  "name": "id",
+                  "in": "path",
+                  "description": "activate / dectivate customer",
+                  "schema": {
+                  }
+                },
+                {
+                  "name": "account",
+                  "in": "body",
+                  "description": "activate / dectivate customer",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+
+                  }
+                }
+              ],
+              "produces": [
+                "application/json"
+              ],
+              "responses": {
+                "200": {
+                  "description": "activate / dectivate customer",
+                  "schema": {
+                    "$ref": "#/definitions/farmer"
+                  }
+                }
+              }
+            }
+          }     
+    },
+    "definitions": {
+      "Farmer": {
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "password",
+          "address",
+          "company",
+          "phoneNUmber",
+          "role",
+          "active",
+          "review",
+          "products",
+          "orders"
+        ],
+        "properties": {
+          "_id": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "email": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "company": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "LastName": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "review": {
+            "type": "number"
+          },
+          "products": {
+            "type": "object"
+          },
+          "orders": {
+            "type": "object"
+          }
+  
+        },
+        "Customer": {
+          "required": [
+            "firstName",
+            "lastName",
+            "email",
+            "password",
+            "phoneNUmber",
+            "active",
+            "cart"
+          ],
+          "properties": {
+            "_id": {
+              "type": "string",
+              "uniqueItems": true
+            },
+            "email": {
+              "type": "string",
+              "uniqueItems": true
+            },
+           
+            "phoneNumber": {
+              "type": "string"
+            },
+           
+            "firstName": {
+              "type": "string"
+            },
+            "LastName": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            },
+            "cart": {
+              "type": "object"
+            }
+    
+          }
+      }
+    }
+  }
+}
+
+
+                    

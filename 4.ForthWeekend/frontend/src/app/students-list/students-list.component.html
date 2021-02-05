@@ -1,0 +1,48 @@
+<!-- <p>students-list works!</p>
+<p *ngFor="let student of students"> {{student.firstName}},{{student.lastName}},{{student.email}} -->
+ 
+     
+    <!-- <table id="users">
+        <tr>
+          <th *ngFor="let col of columns">
+            {{col}}
+          </th>
+        </tr>
+        <tr *ngFor="let student of students">
+          <td *ngFor="let col of index">
+            {{student[col]}}
+          </td>
+        </tr>
+      
+      </table> -->
+<div class="container" style="border: solid;">
+         <br>
+        <table class="table table-hover table-sm">
+            <thead class="thead-dark">
+              <tr>
+                 <th>Firstname</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Phonenumber</th>
+                <th>Role</th>
+
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students">
+                  
+                  <td>{{student._id}}</td>
+                  <td>{{student.lastName}}</td>
+                  <td>{{student.email}}</td>
+                  <td>{{student.phoneNumber}}</td>
+                  <td>{{student.role}}</td>
+                   <!-- [routerLink]="['/signup/edit', student._id]" -->
+                  <td><a class="btn btn-outline-primary">edit</a></td>
+                  <td><a class="btn btn-outline-primary" (click)="deleteStudent(student._id)">Delete</a></td>
+
+                    
+                </tr>
+            </tbody>
+        </table>
+ </div>
