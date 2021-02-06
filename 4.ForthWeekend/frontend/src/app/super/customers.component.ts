@@ -147,7 +147,7 @@ export class CustomersComponent implements OnInit {
   onSubmit(state){
     console.log(state.role);
     console.log(this.productsForm.value);
-    this.subscription= this.data.farmerPassword(state._id,this.productsForm.value).subscribe(response=>{
+    this.subscription= this.data.studentPassword(state._id,this.productsForm.value).subscribe(response=>{
         setTimeout(()=> {this.toggle= !this.toggle; window.location.reload()}
         ,2000);
         this.alert1= true;

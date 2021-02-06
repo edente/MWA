@@ -114,10 +114,10 @@ export class LoginComponent {
   onSubmit() {
     this.subscription = this.data.login(this.loginForm.value).subscribe(
       (response) => {
-        console.log(response['farmer']);
+        console.log(response['student']);
         localStorage.setItem('token', response['token']);
-        localStorage.setItem('data', JSON.stringify(response['farmer']));
-        this.route.navigate(['/farmers']);
+        localStorage.setItem('data', JSON.stringify(response['student']));
+        this.route.navigate(['/students']);
       },
       (err) => {
         this.message = err.error;

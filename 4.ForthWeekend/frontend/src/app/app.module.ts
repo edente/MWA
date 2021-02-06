@@ -38,8 +38,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path :'list', component : StudentsListComponent
     },
 
-      // {path : 'farmers',
-      //  loadChildren: () => import('./farmers/farmers.module').then(m => m.FarmersModule) 
+      // {path : 'students',
+      //  loadChildren: () => import('./students/students.module').then(m => m.studentsModule) 
       // },
       // {path : 'supers',
       // loadChildren: () => import('./super/super.module').then(m => m.SuperModule) 

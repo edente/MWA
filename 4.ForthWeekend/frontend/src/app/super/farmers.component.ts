@@ -10,47 +10,47 @@
 
 
 // @Component({
-//   selector: 'app-farmers',
+//   selector: 'app-students',
 //   template: `
 //   <mat-toolbar color="success">
-//   Lists of Farmers
+//   Lists of students
 // </mat-toolbar>
 //     <div class="alert alert-success" role="alert" *ngIf="alert">
 //       Succesfully changed!!!
 //     </div>
 
-//     <mat-expansion-panel *ngFor="let farmer of farmers">
+//     <mat-expansion-panel *ngFor="let student of students">
 //       <mat-expansion-panel-header>
 //         <mat-panel-title>
 //           <mat-icon>account_circle</mat-icon>
 //           <h4 class="head">
-//             {{ farmer.firstName }} {{ farmer.lastName }}
+//             {{ student.firstName }} {{ student.lastName }}
 //           </h4></mat-panel-title
 //         >
 //         <mat-panel-description
 //           ><h4 class="head">
-//             {{ farmer.company | uppercase }}
+//             {{ student.company | uppercase }}
 //           </h4></mat-panel-description
 //         >
 //       </mat-expansion-panel-header>
-//       <h4>Farmer Detail Informations</h4>
+//       <h4>student Detail Informations</h4>
 //       <div class="one">
 //         <mat-panel-description class="one"
-//           >* Address - {{ farmer.address }}</mat-panel-description
+//           >* Address - {{ student.address }}</mat-panel-description
 //         >
 //         <mat-panel-description class="one"
-//           >* Phone number - {{ farmer.phoneNumber }}</mat-panel-description
+//           >* Phone number - {{ student.phoneNumber }}</mat-panel-description
 //         >
 //         <mat-panel-description class="one"
-//           >* Email - {{ farmer.email }}</mat-panel-description
+//           >* Email - {{ student.email }}</mat-panel-description
 //         >
 //       </div>
 //       <mat-action-row>
-//         <div *ngIf="farmer.active; else deactivate">
+//         <div *ngIf="student.active; else deactivate">
 //           <button
 //             class="btn btn-success"
 //             mat-raised-button
-//             (click)="onDeactivate(farmer._id, farmer.active)"
+//             (click)="onDeactivate(student._id, student.active)"
 //           >
 //             Activate
 //           </button>
@@ -59,7 +59,7 @@
 //           <button
 //             class="btn btn-danger"
 //             mat-raised-button
-//             (click)="onDeactivate(farmer._id, farmer.active)"
+//             (click)="onDeactivate(student._id, student.active)"
 //           >
 //             Deactivate
 //           </button>
@@ -76,7 +76,7 @@
 //       <h3>Reset Password Form</h3>
 //       <div class="alert alert-success" role="alert" *ngIf="alert1">Password is sucessfully changed!!!</div>
     
-//       <form [formGroup]="productsForm" (ngSubmit)="onSubmit(farmer)">
+//       <form [formGroup]="productsForm" (ngSubmit)="onSubmit(student)">
 //       <div class="form-group">
 //         <label for="password">New password : </label>
 //         <input type="password" class="form-control" id="password" formControlName="password">
@@ -118,9 +118,9 @@
 //     `,
 //   ],
 // })
-// export class FarmersComponent implements OnInit {
+// export class studentsComponent implements OnInit {
 //   productsForm :FormGroup;
-//   farmers;
+//   students;
 //   subscription;
 //   status;
 //   alert = false;
@@ -133,14 +133,14 @@
 //     });
 //   }
 //   ngOnInit(): void {
-//     this.subscription = this.data.farmers().subscribe((response) => {
-//       this.farmers = response;
+//     this.subscription = this.data.students().subscribe((response) => {
+//       this.students = response;
 //     });
 //   }
 
 //   onDeactivate(id, bool) {
 //     this.status = { active: !bool };
-//     this.data.farmerDeactivation(id, this.status).subscribe((response) => {
+//     this.data.studentDeactivation(id, this.status).subscribe((response) => {
 //       setTimeout(() => window.location.reload(), 2000);
 //       this.alert = true;
 //     });

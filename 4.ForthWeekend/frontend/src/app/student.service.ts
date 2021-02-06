@@ -44,9 +44,9 @@ export class StudentService {
   }
 
   isAuthorized(){
-    let farmer = localStorage.getItem('data');
-    let Farmer = JSON.parse(farmer);
-    return !!(Farmer.role == 'farmer');
+    let student = localStorage.getItem('data');
+    let student = JSON.parse(student);
+    return !!(student.role == 'student');
   }
   
   logout(){

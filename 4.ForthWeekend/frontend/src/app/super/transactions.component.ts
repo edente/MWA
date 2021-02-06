@@ -14,8 +14,8 @@
 //       placeholder="Search by date yyyy-mm-dd"
 //     />
 
-//     <div *ngFor="let farmer of farmers">
-//       <mat-expansion-panel  *ngFor="let order of farmer.orders">
+//     <div *ngFor="let student of students">
+//       <mat-expansion-panel  *ngFor="let order of student.orders">
 //         <mat-expansion-panel-header>
 //           <mat-panel-title>
 //             <mat-icon>account_balance_wallet</mat-icon>
@@ -44,7 +44,7 @@
 //           >
 //           <mat-panel-description class="one"
 //             >* Transaction between -
-//             FarmerId - {{ farmer._id }} and CustomerId-{{order.customerId}} </mat-panel-description
+//             studentId - {{ student._id }} and CustomerId-{{order.customerId}} </mat-panel-description
 //           >
 //         </div>
 //       </mat-expansion-panel>
@@ -93,7 +93,7 @@
 //   ],
 // })
 // export class TransactionsComponent implements OnInit {
-//   farmers;
+//   students;
 //   subscription;
 //   state;
 //   alert = false;
@@ -101,12 +101,12 @@
 //   constructor(private data:  SuperService , private route: Router) {}
 //   ngOnInit(): void {
 //         this.subscription = this.data
-//       .farmers()
+//       .students()
 //       .subscribe((response) => {
 //         console.log(response,"ddddd")
-//         this.farmers = response;
-//         this.state =[...this.farmers]
-//          console.log(this.farmers);
+//         this.students = response;
+//         this.state =[...this.students]
+//          console.log(this.students);
 //       });
 //   }
 
@@ -114,13 +114,13 @@
 //   onSearch(value) {
 //     console.log(value)
 //     if(value){
-//       this.farmers =this.state.map((farmer)=>{
-//        return farmer.orders.filter((order) => {
+//       this.students =this.state.map((student)=>{
+//        return student.orders.filter((order) => {
 //           return order.date.slice(0,10) == value;
 //         });
 //       }) 
 //   }else{
-//     this.farmers = this.state;
+//     this.students = this.state;
 //   }
 //   }
 //   ngOnDestroy() {

@@ -13,7 +13,7 @@ import {StudentService } from './student.service';
   <a [routerLink] = "['list']"> lists</a> 
 
    <div class="spacer"></div>
-    <a [routerLink] = "['supers','students']" id="farmer" *ngIf="!!data.isAuthenticated() && !data.isAuthorized()">Student</a>
+    <a [routerLink] = "['supers','students']" id="student" *ngIf="!!data.isAuthenticated() && !data.isAuthorized()">Student</a>
     <a [routerLink] = "['supers','customers']" id="list" *ngIf="!!data.isAuthenticated() && !data.isAuthorized()">Customers</a>
     <a [routerLink] = "['supers','transactions']" id="transaction" *ngIf="!!data.isAuthenticated() && !data.isAuthorized()">Transactions</a>
     <a [routerLink] = "['supers','files']" id="file" *ngIf="!!data.isAuthenticated() && !data.isAuthorized()">Log Files</a>
@@ -38,5 +38,5 @@ import {StudentService } from './student.service';
 })
 export class AppComponent {
   data;
-  constructor(private farmer : StudentService){  this.data = this.farmer;}
+  constructor(private student : StudentService){  this.data = this.student;}
 }

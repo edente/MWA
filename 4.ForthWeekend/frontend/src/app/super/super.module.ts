@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-// import { FarmersComponent } from './farmers.component';
+// import { studentsComponent } from './students.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
@@ -32,11 +32,11 @@ import {AuthGuard}  from '../auth.guard';
     MatDatepickerModule,
     MatToolbarModule,
     RouterModule.forChild([
-      // {path :'farmers', component: FarmersComponent,canActivate :[AuthGuard]},
+      // {path :'students', component: studentsComponent,canActivate :[AuthGuard]},
       {path :'customers', component: CustomersComponent,canActivate :[AuthGuard]},
       // {path :'transactions', component: TransactionsComponent,canActivate :[AuthGuard]},
       {path :'files', component: LogfilesComponent,canActivate :[AuthGuard]},
-      {path :'farmers/resets', component: ResetComponent,canActivate :[AuthGuard]},
+      {path :'students/resets', component: ResetComponent,canActivate :[AuthGuard]},
       {path :'customers/resets', component: ResetComponent,canActivate :[AuthGuard]}
 
 

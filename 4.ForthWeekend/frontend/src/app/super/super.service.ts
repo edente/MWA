@@ -8,7 +8,7 @@ export class SuperService {
 
   constructor(private http : HttpClient) { };
 
-  // farmers(){
+  // students(){
   //   return this.http.get(`http://localhost:4000/api/supers`)
   // }
 
@@ -24,14 +24,14 @@ export class SuperService {
     return this.http.patch(`http://localhost:4000/api/customers/${id}/accounts`,body)
   }
 
-  farmerPassword(id,body){
-    return this.http.patch(`http://localhost:4000/api/farmers/${id}`,body)
+  studentPassword(id,body){
+    return this.http.patch(`http://localhost:4000/api/students/${id}`,body)
   }
 
-  farmerDeactivation(id,body){
-    return this.http.patch(`http://localhost:4000/api/farmers/${id}/accounts`,body)
+  studentDeactivation(id,body){
+    return this.http.patch(`http://localhost:4000/api/students/${id}/accounts`,body)
   }
   logfiles(){
-    return this.http.get(`http://localhost:4000/api/farmers/logs/files`)
+    return this.http.get(`http://localhost:4000/api/students/logs/files`)
   }
 }

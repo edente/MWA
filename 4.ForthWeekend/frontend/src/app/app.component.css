@@ -68,7 +68,7 @@
     color: white;
   }
   
-  .toolbar #farmer,#list,#transaction{
+  .toolbar #student,#list,#transaction{
     padding-right: 80px;
     color: white
   }
@@ -76,7 +76,7 @@
     opacity: 0.8;
 
   }
- .toolbar #addproduct:hover,#ordersproduct:hover,#farmer:hover,#list:hover,#transaction:hover,#file:hover{
+ .toolbar #addproduct:hover,#ordersproduct:hover,#student:hover,#list:hover,#transaction:hover,#file:hover{
     opacity: 0.6;
   }
   .foot{

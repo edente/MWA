@@ -44,9 +44,9 @@ export class ResetComponent {
   onSubmit(){
     console.log(this.state.role);
     console.log(this.productsForm.value);
-    if(this.state.role == 'farmer'){
-    this.subscription = this.data.farmerPassword(this.state._id,this.productsForm.value).subscribe(response=>{
-      setTimeout(()=>this.route.navigate(['/supers/farmers']),2000);
+    if(this.state.role == 'student'){
+    this.subscription = this.data.studentPassword(this.state._id,this.productsForm.value).subscribe(response=>{
+      setTimeout(()=>this.route.navigate(['/supers/students']),2000);
       this.alert= true;
     });
     }else{
