@@ -11,46 +11,7 @@ import { Student } from './students-list/student.model';
 
 @Component({
   selector: 'app-signup',
-  template: `
- <h1></h1>
-  <mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Log In Form</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <div class="alert alert-danger" role="alert" *ngIf="alert">
-        {{ message }}
-      </div>
-
-      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="firstName">First name : </label>
-        <input type="text" class="form-control" id="firstName" name="firstName" formControlName="firstName">
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last name : </label>
-        <input type="text" class="form-control" id="lastName" formControlName="lastName">
-      </div>
-      <div class="form-group">
-        <label for="email">Email : </label>
-        <input type="text" class="form-control" id="email" formControlName="email">
-      </div>
-      <div class="form-group">
-        <label for="password">Password : </label>
-        <input type="password" class="form-control" id="password" formControlName="password">
-      </div>
-       
-       
-      <div class="form-group">
-        <label for="phoneNumber">PhoneNumber : </label>
-        <input type="phoneNumber" class="form-control" id="phoneNumber" formControlName="phoneNumber">
-      </div>
-      
-      <button type="submit" class="btn btn-primary"  [disabled]="!signupForm.valid">Sign Up</button>
-    </form>
-    </mat-card-content>
-  </mat-card>
-`,
+  templateUrl:'./signup.component.html',
 styles: [
   `
   mat-card{
@@ -89,11 +50,12 @@ export class SignupComponent implements OnInit{
   constructor(private r:ActivatedRoute, private formBuilder: FormBuilder ,private data : StudentService ,private route : Router) {
 
     this.signupForm = this.formBuilder.group({
-      'firstName': [this.student.firstName, Validators.required],
+      'firstName': ['', Validators.required],
       'lastName': ['', Validators.required],
       'email': ['', Validators.required],
       'password': ['', Validators.required],
        'phoneNumber': ['', Validators.required],
+       'photo': ['']
     });
   }
 
@@ -112,6 +74,16 @@ export class SignupComponent implements OnInit{
     })
   }
 
+
+  onFileChanged(event){
+    const file = event.target.files[0];
+    console.log("file: "+file);
+    // this.signupForm.value['photo']=file;
+    // this.data.onUpload(file).subscribe((data)=>{
+    //   console.log("saved pic: "+data);
+      
+    // })
+  }
 
   onSubmit(){
     console.log(this.signupForm.value);

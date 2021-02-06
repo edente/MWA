@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
  const cors = require("cors");
 const config = require("config");
+const fs = require("fs");
+
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./config/swagger.json');
 
@@ -16,7 +18,7 @@ const superRoutes = require("./routes/super");
 
 //instatiating app
 const app = express();
-
+ 
 // getting config key
 const db = config.get("mongoURI");
 

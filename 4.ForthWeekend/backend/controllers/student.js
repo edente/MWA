@@ -1,9 +1,23 @@
 const Student = require("../models/students");
 // const faculty = require("../models/faculty");
-
+// const multer = require("multer");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+
+
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//       cb(null, './upload')
+//   },
+//   filename: function (req, file, cb) {
+//       cb(null, file.originalname)
+//   }
+// })
+// const upload = multer({
+//   storage: storage
+// })
+
 
 //student Log in
 exports.login = (req, res, next) => {
@@ -60,8 +74,9 @@ exports.signup = (req, res, next) => {
     firstName,
     lastName,
     phoneNumber,
-      email,
+    email,
     password,
+    photo
   } = req.body;
 
   //simple validation
@@ -89,6 +104,7 @@ exports.signup = (req, res, next) => {
             email,
             password: hashedPassword,
             phoneNumber,
+            photo,
              role: "student"
           });
           return student.save();

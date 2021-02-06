@@ -28,6 +28,12 @@ const studentSchema = new Schema({
     type: Number,
     required: true,
   },
+  qrCode: {
+    type: String
+  },
+  photo: {
+    type: String
+  },
 
   role: {
     type: String,

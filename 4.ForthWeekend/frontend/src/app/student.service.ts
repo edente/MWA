@@ -36,8 +36,6 @@ export class StudentService {
   updateOne(studentId){
      return this.http.put(`http://localhost:4000/api/students/studentId`,studentId);
     }
-
-
     
   isAuthenticated(){
     return !!localStorage.getItem('token')
@@ -45,8 +43,8 @@ export class StudentService {
 
   isAuthorized(){
     let student = localStorage.getItem('data');
-    let student = JSON.parse(student);
-    return !!(student.role == 'student');
+     student = JSON.parse(student);
+    // return !!(student.role == 'student');
   }
   
   logout(){
@@ -56,6 +54,10 @@ export class StudentService {
 
   getToken(){
     return localStorage.getItem('token');
+  }
+
+  onUpload(file: any) {
+    return this.http.post('http://localhost:4000/api/students/file-upload',file)
   }
 }
 
